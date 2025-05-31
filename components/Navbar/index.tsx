@@ -13,7 +13,7 @@ const Navbar = () => {
         <span>
           ⚠️ Built on Somnia Network (Testnet). No real assets involved. Check{' '}
           <a
-            href="https://github.com/lrmn7/yourbefun-somnia"
+            href="https://github.com/wakco/monster-somnia"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.githubLink}
