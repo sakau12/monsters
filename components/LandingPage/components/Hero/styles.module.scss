@@ -1,0 +1,342 @@
+.container {
+  width: 100%;
+  max-height: 90vh;
+
+  .gridContainer {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+
+    .blankContainer {
+      width: calc(100% / 3);
+    }
+
+    .logoContainer {
+      width: calc(100% / 3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 200px;
+
+      .widthContainer {
+        width: 100%;
+        transform: scale(1.2);
+        animation: logoAnimation 2.5s ease-in-out infinite;
+
+        > div {
+          position: unset !important;
+        }
+
+        .image {
+          object-fit: contain;
+          width: 100% !important;
+          position: relative !important;
+          height: unset !important;
+        }
+      }
+    }
+
+    .mintContainer {
+      width: calc(100% / 3);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      z-index: 1;
+
+      .widthContainer {
+        width: 75%;
+        margin-bottom: 80px;
+        animation: mintAnimation 2s ease-in;
+
+        > div {
+          position: unset !important;
+        }
+
+        .image {
+          object-fit: contain;
+          width: 100% !important;
+          position: relative !important;
+          height: unset !important;
+        }
+      }
+    }
+  }
+
+  .positionContainer {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 4%, #000000 40%);
+    transform: translateY(-150px);
+    z-index: 0;
+
+    .statsContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      width: 70%;
+      
+      .itemContainer {
+        width: 180px;
+        display: flex;
+        flex-direction: column;
+
+        .number {
+          display: flex;
+          justify-content: center;
+          font-size: 30px;
+          font-weight: 700;
+        }
+
+        .text {
+          display: flex;
+          justify-content: center;
+          margin-top: 4px;
+          font-size: 17px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@keyframes logoAnimation {
+  0% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1.14);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes mintAnimation {
+  0% {
+    transform: translateX(340px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.funMessageSection {
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+
+.funMessageInputContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: transparent;
+}
+
+.funMessageInput {
+  width: 100%;
+  padding-right: 40px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.charIndicator {
+  position: absolute;
+  right: 10px;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+
+.funMessageButton {
+  margin-top: 0.8rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: url('./assets/cursor1.png'), pointer;
+  padding: 0 30px;
+  border-radius: 3px;
+  background: rgba(90, 90, 90, 0.3);
+  transition: 0.4s;
+
+  &:hover {
+    background: #e32591;
+  }
+}
+
+.funMessageAlert {
+  margin-top: 1rem;
+  color: #e32591;
+  font-size: 0.9rem;
+}
+
+/* Recent Messages */
+.recentMessagesContainer {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  border: 1px solid #333232;
+  border-radius: 20px;
+  background: transparent;
+  
+  /* Masking untuk meredupkan border dari bawah ke atas */
+  -webkit-mask-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(116, 112, 112) 50%);
+  mask-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(141, 134, 134) 100%);
+}
+
+
+.recentMessagesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recentMessagesList li {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
+}
+
+.recentMessagesList li strong {
+  color: #2f7286;
+}
+
+.recentMessagesList li span {
+  color: #fff;
+}
+
+
+.popupError {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(190, 46, 46);
+  color: white;
+  padding: 8px 25px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popupError.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.funMessageButton:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 768px) {
+  .gridContainer {
+    flex-direction: column; // Ubah layout ke vertical
+    height: auto;
+
+    .blankContainer,
+    .logoContainer,
+    .mintContainer {
+      width: 100%; // Buat elemen memenuhi lebar layar
+    }
+
+    .logoContainer {
+      margin-bottom: 100px; // Kurangi margin agar lebih rapi di layar kecil
+    }
+
+    .mintContainer {
+      align-items: center; // Pusatkan elemen
+      .widthContainer {
+        width: 90%; // Perbesar untuk layar kecil
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .positionContainer {
+    transform: translateY(-100px); // Sesuaikan untuk layar kecil
+  }
+}
+
+@media (max-width: 1024px) {
+  .gridContainer {
+    .logoContainer {
+      margin-bottom: 150px; // Sesuaikan margin agar tetap proporsional
+    }
+
+    .mintContainer {
+      .widthContainer {
+        width: 85%;
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  .positionContainer {
+    height: 120px;
+    transform: translateY(-120px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gridContainer {
+    .logoContainer {
+      transform: scale(0.8); // Kecilkan sedikit untuk muat di layar kecil
+    }
+    .mintContainer {
+      .widthContainer {
+        width: 95%;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .funMessageSection {
+    top: 20%; // Turunkan posisi agar tidak terlalu ke atas
+    left: 0; // Pusatkan
+  }
+
+  .funMessageInputContainer {
+    max-width: 300px; // Kurangi lebar input agar tidak kepanjangan di layar kecil
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px; // atau jarak yang diinginkan antara tombol
+  justify-content: center; // opsional, untuk meratakan ke tengah
+  align-items: center;   // opsional, untuk penyelarasan vertikal
+}

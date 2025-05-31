@@ -1,0 +1,336 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  min-height: 100vh;
+  padding-bottom: 50px;
+
+  .widthLimiter {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    .centerContainer {
+      display: flex;
+      justify-content: center;
+
+      .titleContainer {
+        padding-top: 40px;
+        text-align: center;
+        z-index: 1;
+    
+        .title {
+          color: #5209c7;
+          font-size: 22px;
+          font-weight: 700;
+        }
+    
+        .secondaryTitle {
+          font-size: 42px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.betBtn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+
+.somflipContainer {
+  position: relative;
+  max-width: 600px;
+  margin: 20px auto;
+  background: transparent;
+  padding: 20px;
+  border: 1px solid #333232;
+  border-radius: 20px;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+.header {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.walletInfo {
+  background: #2e2e45;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.accountInfo {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.connectWallet,
+.disconnectWallet {
+  background: #d80812;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.connectWallet:hover,
+.disconnectWallet:hover {
+  background: #da0529;
+}
+
+.coinContainer {
+  margin: 20px 0;
+}
+
+.coinImage {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.5s;
+}
+
+.coinSelection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.sideBtn {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  background: #555;
+}
+
+.sideBtn.active {
+  background: #06a6ce;
+}
+
+.sideBtn:hover {
+  background: #33a7c4;
+}
+
+.betSelection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.betBtn {
+  background: #069b7b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.betBtn.active {
+  background: #28a745;
+}
+
+.betBtn:hover {
+  background: #08276b;
+}
+
+.somniaLogoContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.somniaLogo {
+  width: 100px;
+  height: 50px;
+}
+
+@media (max-width: 600px) {
+  .somniaLogo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.flipBtn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.flipBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+
+.flipBtn:hover {
+  background: #218838;
+}
+
+.resultContainer {
+  border: 1px solid #333232;
+  border-radius: 20px;
+  background: transparent;
+  padding: 10px;
+  margin-top: 15px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.resultContainer h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.lastFlipsContainer {
+  border: 1px solid #333232;
+  border-radius: 20px;
+  background: transparent;
+  padding: 12px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.lastFlipsContainer h3 {
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 2px solid #ff9500;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.lastFlipsContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lastFlipsContainer li {
+  font-size: 14px;
+  border: 1px solid #333232;
+  border-radius: 20px;
+  background: transparent;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.statsContainer {
+  background: #1c1c2e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.statsContainer h3 {
+  font-size: 18px;
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.statsContainer p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.winText {
+  color: #43b643;
+  font-weight: bold;
+}
+
+.loseText {
+  color: #f04343;
+  font-weight: bold;
+}
+
+.viewTx {
+  color: #1e90ff;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background: rgba(30, 144, 255, 0.1);
+}
+
+.viewTx:hover {
+  color: white;
+  background: #1e90ff;
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.popupOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupContent {
+  background: transparent;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  color: red;
+}
+
+.popupContent button {
+  background: #ff4d4d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  margin-top: 10px;
+}
